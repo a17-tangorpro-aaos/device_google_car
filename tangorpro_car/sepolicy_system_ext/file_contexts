@@ -1,0 +1,2 @@
+/system_ext/bin/hw/android\.hardware\.automotive\.vehicle@V4-default-service u:object_r:vhal_system_ext_exec:s0
+/system_ext/bin/hw/android\.hardware\.automotive\.audiocontrol-service\.example u:object_r:hal_audiocontrol_system_ext_exec:s0

@@ -1,0 +1,12 @@
+type hal_audiocontrol_system_ext, domain, coredomain;
+type hal_audiocontrol_system_ext_exec, exec_type, system_file_type, file_type;
+
+init_daemon_domain(hal_audiocontrol_system_ext)
+
+# Make this domain a server for hal_audiocontrol
+hal_server_domain(hal_audiocontrol_system_ext, hal_audiocontrol)
+
+allow hal_audiocontrol_system_ext servicemanager:binder { call transfer };
+allow servicemanager hal_audiocontrol_system_ext:binder { call transfer };
+
+allow hal_audiocontrol_system_ext hal_audiocontrol_service:service_manager { add find };

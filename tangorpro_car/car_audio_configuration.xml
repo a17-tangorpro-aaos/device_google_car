@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carAudioConfiguration version="4">
+    <zones>
+        <zone name="primary zone" isPrimary="true" occupantZoneId="0">
+            <zoneConfigs>
+                <zoneConfig name="primary zone config 0" isDefault="true">
+                    <volumeGroups>
+                        <group>
+                            <device address="" type="TYPE_BUILTIN_SPEAKER">
+                                <context context="music"/>
+                                <context context="navigation"/>
+                                <context context="voice_command"/>
+                                <context context="call_ring"/>
+                                <context context="call"/>
+                                <context context="alarm"/>
+                                <context context="notification"/>
+                                <context context="system_sound"/>
+                                <context context="emergency"/>
+                                <context context="safety"/>
+                                <context context="vehicle_status"/>
+                                <context context="announcement"/>
+                            </device>
+                        </group>
+                    </volumeGroups>
+                </zoneConfig>
+            </zoneConfigs>
+        </zone>
+    </zones>
+</carAudioConfiguration>

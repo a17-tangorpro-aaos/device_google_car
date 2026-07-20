@@ -1,0 +1,21 @@
+type vhal_system_ext, domain, coredomain;
+type vhal_system_ext_exec, exec_type, system_file_type, file_type;
+
+init_daemon_domain(vhal_system_ext)
+hal_server_domain(vhal_system_ext, hal_vehicle)
+
+allow vhal_system_ext hwservicemanager:binder { call transfer };
+allow hwservicemanager vhal_system_ext:binder { call transfer };
+allow vhal_system_ext hwservicemanager:dir search;
+allow vhal_system_ext hwservicemanager:file { read open getattr };
+allow vhal_system_ext hwservicemanager:process getattr;
+
+allow vhal_system_ext servicemanager:binder { call transfer };
+allow servicemanager vhal_system_ext:binder { call transfer };
+
+allow vhal_system_ext hal_vehicle_hwservice:hwservice_manager { add find };
+allow vhal_system_ext hal_vehicle_service:service_manager { add find };
+
+allow vhal_system_ext hidl_base_hwservice:hwservice_manager add;
+
+allow vhal_system_ext kmsg_device:chr_file { read write open getattr };

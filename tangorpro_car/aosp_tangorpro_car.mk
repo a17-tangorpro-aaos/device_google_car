@@ -42,3 +42,24 @@ PRODUCT_MANUFACTURER := Google
 PRODUCT_BRAND_FOR_ATTESTATION := google
 PRODUCT_NAME_FOR_ATTESTATION := tangorpro
 PRODUCT_MODEL_FOR_ATTESTATION := Pixel Tablet
+
+# Automotive-specific packages
+PRODUCT_PACKAGES += \
+    android.hardware.automotive.vehicle@V4-default-service \
+    android.hardware.automotive.audiocontrol-service.example \
+    Prebuilt_VehicleHalDefaultProperties_JSON \
+    GoogleExtServices
+
+PRODUCT_COPY_FILES += \
+    device/google_car/tangorpro_car/disable_secretkeeper.rc:$(TARGET_COPY_OUT_PRODUCT)/etc/init/disable_secretkeeper.rc \
+    device/google_car/tangorpro_car/car_audio_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/car_audio_configuration.xml
+
+# Enable AAOS Dynamic Audio Routing
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.car.audio.useDynamicRouting=true \
+    ro.car.audio.hw.audiocontrol=true
+
+#$(call inherit-product, vendor/google/products/gms.mk)
+
+PRODUCT_PRODUCT_PROPERTIES += persist.sys.disable_rescue=true
+PRODUCT_PRODUCT_PROPERTIES += persist.sys.rescue_level=0

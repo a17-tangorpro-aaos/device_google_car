@@ -23,3 +23,7 @@ endif
 
 # Wifi interface combination - {1 STA + 1 P2P} or {1 STA + 1 NAN} or {1 STA + 1 AP}
 WIFI_HAL_INTERFACE_COMBINATIONS := {{{STA}, 1}, {{P2P, NAN, AP}, 1}}
+BOARD_SEPOLICY_DIRS += device/google_car/tangorpro_car/sepolicy
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+SELINUX_IGNORE_NEVERALLOWS := true
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += device/google_car/tangorpro_car/sepolicy_system_ext
