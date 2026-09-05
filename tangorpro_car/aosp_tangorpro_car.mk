@@ -59,7 +59,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.car.audio.useDynamicRouting=true \
     ro.car.audio.hw.audiocontrol=true
 
-#$(call inherit-product, vendor/google/products/gms.mk)
-
 PRODUCT_PRODUCT_PROPERTIES += persist.sys.disable_rescue=true
 PRODUCT_PRODUCT_PROPERTIES += persist.sys.rescue_level=0
